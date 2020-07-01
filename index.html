@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        @media (min-width: 700px) {
+
+            .inner1,
+            .inner2 {
+                width: 200px !important;
+                height: 200px !important;
+
+            }
+        }
+
+        #red,
+        #green,
+        #blue {
+            width: 300px;
+        }
+
+
+
+
+
+        #red1,
+        #green1,
+        #blue1 {
+            width: 300px;
+        }
+
+        .in {
+            text-align: center;
+            color: indianred;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;color:whitesmoke;background-color:#198c8c;" class="mb-3 py-3">Color Generator </h1>
+
+    <div class="d-flex flex-row justify-content-between">
+        <div class="container d-flex flex-column justify-content-center alighn-items-center my-4 p-3 mx-3"
+            style="border:1px solid blue">
+            <h2 style="text-align: center;color:navy;font-family: Arial, Helvetica, sans-serif;">Color 1: </h2>
+            <hr>
+
+            <div class="inner d-flex flex-row justify-content-around mt-2">
+                <h3 style="color: red;"> Red: </h3>
+                <input type="range" min="0" max="255" value="0" id="red" onchange="generate()"><input type="text"
+                    class="r" value="0" style="width:50px;text-align:center" onkeyup="generatevalue()">
+            </div>
+
+            <div class="inner d-flex flex-row justify-content-around mt-2">
+                <h3 style="color: green;"> Green: </h3>
+                <input type="range" min="0" max="255" value="0" id="green" onchange="generate()"><input type="text"
+                    class="g" value="0" style="width:50px;text-align:center" onkeyup="generatevalue()">
+            </div>
+
+            <div class="inner d-flex flex-row justify-content-around mt-2">
+                <h3 style="color:blue"> Blue: </h3>
+                <input type="range" min="0" max="255" value="0" id="blue" onchange="generate()"><input type="text"
+                    class="b" value="0" style="width:50px;text-align:center" onkeyup="generatevalue()">
+            </div>
+
+
+
+
+            <div class="container d-flex flex-column justify-content-center align-items-center my-2 p-3">
+
+                <input type="text" id="rgb1" class="in" readonly><br>
+                <input type="text" id="hex1" class="in" readonly>
+
+            </div>
+
+            <div class="container d-flex flex-column justify-content-center align-items-center  mt-1 mb-4 p-3">
+
+                <div class="inner1 border-primary d-flex justify-content-center align-items-center"
+                    style="height:200px;width:260px;border:1px solid black">
+                    <h5 class="text"
+                        style="font-weight: bold;font-family: Arial, Helvetica, sans-serif;color:white;text-align: center;">
+                    </h5>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container d-flex flex-column justify-content-center alighn-items-center my-4 p-3 mx-3"
+            style="border:1px solid blue">
+            <h2 style="text-align: center;color:navy;font-family: Arial, Helvetica, sans-serif;" class="-mt-4">Color 2:
+            </h2>
+            <hr>
+            <div class="inner d-flex flex-row justify-content-around mt-2">
+                <h3 style="color: red;"> Red: </h3>
+                <input type="range" min="0" max="255" value="0" id="red1" onchange="generate1()"><input type="text"
+                    class="r1" value="0" style="width:50px;text-align:center" onkeyup="generatevalue1()">
+            </div>
+
+            <div class="inner d-flex flex-row justify-content-around mt-2">
+                <h3 style="color: green;"> Green: </h3>
+                <input type="range" min="0" max="255" value="0" id="green1" onchange="generate1()"><input type="text"
+                    class="g1" value="0" style="width:50px;text-align:center" onkeyup="generatevalue1()">
+            </div>
+
+            <div class="inner d-flex flex-row justify-content-around mt-2">
+                <h3 style="color:blue"> Blue: </h3>
+                <input type="range" min="0" max="255" value="0" id="blue1" onchange="generate1()"><input type="text"
+                    class="b1" value="0" style="width:50px;text-align:center" onkeyup="generatevalue1()">
+            </div>
+
+
+
+            <div class="container d-flex flex-column justify-content-center align-items-center my-2 p-3">
+
+                <input type="text" id="rgb2" class="in" readonly><br>
+                <input type="text" id="hex2" class="in" readonly>
+
+            </div>
+
+            <div class="container d-flex flex-column justify-content-center align-items-center  mt-1 mb-4 p-3">
+
+                <div class="inner2 border-primary d-flex justify-content-center align-items-center"
+                    style="height:200px;width:260px;border:1px solid black">
+                    <h5 class="text1"
+                        style="font-weight: bold;font-family: Arial, Helvetica, sans-serif;color:white;text-align: center;">
+                    </h5>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    <center> <button type="button" name="" id="" class="btn btn-outline-success btn-lg" onclick="combine()"> Combine
+        </button></center>
+
+    <center>
+        <input class=" mt-3" type="text" id="lg"
+            style="width:500px;padding:10px;font-size:18px;text-align:center;color:brown" readonly>
+        <div class="inner3 mt-2 mb-5" style="height:200px;width:600px;border:1px solid blueviolet">
+
+        </div>
+    </center>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script>
+        function generate() {
+            let value1 = $("#red").val()
+            $(".r").val(value1)
+
+            let value2 = $("#green").val()
+            $(".g").val(value2)
+
+            let value3 = $("#blue").val()
+            $(".b").val(value3)
+
+            let red = $(".r").val()
+            let grr = $(".g").val()
+            let blu = $(".b").val()
+            let st = `rgb(${red},${grr},${blu})`
+
+
+            $(".inner1").css("background-color", st);
+
+            let arr = [parseInt(red), parseInt(grr), parseInt(blu)]
+
+            let hex = ""
+            for (var i = 0; i < arr.length; i++) {
+
+                if (arr[i] >= 0 && arr[i] <= 15) {
+                    hex = hex + "0";
+                }
+                hex = hex + arr[i].toString(16)
+
+
+            }
+
+            hex = "#" + hex;
+            $("#rgb1").val(st)
+            $("#hex1").val(hex)
+        }
+
+        function generatevalue() {
+
+
+            let red = $(".r").val()
+            let grr = $(".g").val()
+            let blu = $(".b").val()
+            $("#red").val(red)
+            $("#green").val(grr)
+            $("#blue").val(blu)
+            let st = `rgb(${red},${grr},${blu})`
+            let arr = [parseInt(red), parseInt(grr), parseInt(blu)]
+
+            let hex = ""
+            for (var i = 0; i < arr.length; i++) {
+
+
+                if (arr[i] >= 0 && arr[i] <= 15) {
+                    hex = hex + "0";
+                }
+                hex = hex + arr[i].toString(16)
+
+            }
+
+            hex = "#" + hex;
+            $("#rgb1").val(st)
+            $("#hex1").val(hex)
+
+            $(".inner1").css("background-color", st);
+
+        }
+    </script>
+    <script src="newc.js"></script>
+</body>
+
+</html>
